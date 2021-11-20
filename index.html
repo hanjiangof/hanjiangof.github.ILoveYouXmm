@@ -1,0 +1,67 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<%--<script>
+			//不能为空
+			var sbqNull= /^\s*$/g;
+			//后面还会讲，今天只讲一点点
+			function  sbq() {
+
+				//1.获取userName的值
+				var userName=  document.getElementById("userName").value;
+				if(sbqNull.test(userName)){
+					alert("用户名为能为空");
+					return false;
+				}
+				return true;
+			}
+		</script>--%>
+
+
+		<%--后面再讲，今天就先讲这么多--%>
+		<script>
+			var sbqNull= /^\s*$/g;
+			function sbq() {
+				alert(1);
+				return checkUserName()&&checkPwd();
+				//return true&&false;
+			}
+
+			function checkUserName() {
+				//1.获取userName的值
+				var userName=  document.getElementById("userName").value;
+				if(sbqNull.test(userName)){
+					alert("用户名为能为空");
+					return false;
+				}
+				return true;
+			}
+
+			function checkPwd() {
+				alert("密码");
+				return true;
+			}
+
+
+
+		</script>
+	</head>
+	<body>
+	   <h1>薛敏敏你是谁的猪猪？</h1>	
+		<%--<form method="post" action="是不是点提交需要跳到我的这个url">--%>
+
+		${pageContext.request.contextPath}
+
+
+		<form method="post" action="https://ai.taobao.com/?pid=mm_130402922_1111150093_109790500145&union_lens=lensId%3APUB%401627031575%400bb0b71b_0996_17ad2a39a80_063d%4001" onsubmit="return sbq()">
+			
+			用户名：<input id="userName" name="userName" onblur="checkUserName()" />
+			密码：<input  id="pwd" type="password" name="pwd" />
+			<input type="submit" value="提交" />
+				
+		</form>
+	</body>
+</html>
+
